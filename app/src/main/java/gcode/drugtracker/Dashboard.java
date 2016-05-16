@@ -11,9 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.orm.query.Condition;
 import com.orm.query.Select;
@@ -32,6 +35,18 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         drugListView = (ListView) findViewById( R.id.drugList );
+
+        drugListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                TableRow tableRow = (TableRow) adapterView.getItemAtPosition(position);
+                String drugName = ((TextView) tableRow.findViewById(R.id.rowTextView)).getText().toString();
+
+                Intent myIntent = new Intent(Dashboard.this, DrugDetails.class);
+                myIntent.putExtra("drug_name", drugName);
+                Dashboard.this.startActivity(myIntent);
+            }
+        });
 
         ArrayList<String> drugList = new ArrayList<String>();
         Select drugQuery = Select.from(Drug.class);
