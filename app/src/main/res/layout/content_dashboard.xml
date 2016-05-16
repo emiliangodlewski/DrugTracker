@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Dashboard"
+    android:background="@android:color/holo_blue_bright">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_drug"
+        android:id="@+id/addButton"
+        android:onClick="goToAddDrugActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/black"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.Button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/app_name"
+        android:id="@+id/appTitle"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/addButton"
+        android:background="#303f9f"
+        android:layout_alignEnd="@+id/addButton"
+        android:textColor="#ffffff"
+        android:paddingBottom="10dp"
+        android:textAlignment="textStart"
+        android:paddingTop="10dp"
+        android:paddingLeft="25dp" />
+
+    <Button
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:id="@+id/settngsButton"
+        android:layout_alignBottom="@+id/appTitle"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ffffff"
+        android:enabled="false" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/drugList"
+        android:layout_below="@+id/appTitle"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
