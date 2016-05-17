@@ -39,9 +39,7 @@ public class Dashboard extends AppCompatActivity {
         drugListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                TableRow tableRow = (TableRow) adapterView.getItemAtPosition(position);
-                String drugName = ((TextView) tableRow.findViewById(R.id.rowTextView)).getText().toString();
-
+                String drugName = (String) adapterView.getItemAtPosition(position);
                 Intent myIntent = new Intent(Dashboard.this, DrugDetails.class);
                 myIntent.putExtra("drug_name", drugName);
                 Dashboard.this.startActivity(myIntent);

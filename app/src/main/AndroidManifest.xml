@@ -37,15 +37,15 @@
 
         <activity
             android:name=".AddDrug"
-            android:label="@string/add_drug">
-
-        </activity>
+            android:label="@string/add_drug"></activity>
 
         <activity
             android:name=".DrugDetails"
-            android:label="@string/details">
+            android:label="@string/details"></activity>
 
-        </activity>
+        <activity
+            android:name=".AddTime"
+            android:label="Schedule time"></activity>
     </application>
 
 </manifest>
