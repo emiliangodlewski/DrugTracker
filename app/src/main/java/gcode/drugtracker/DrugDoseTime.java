@@ -8,16 +8,19 @@ import java.sql.Time;
 
 public class DrugDoseTime extends SugarRecord {
     int dayOfWeek;
-    DateTime doseTime;
+    int doseHour;
+    int doseMinutes;
 
     Drug drug;
 
     public DrugDoseTime() {
     }
 
-    public DrugDoseTime(int dayOfWeek, DateTime doseTime, Drug drug) {
+    public DrugDoseTime(int dayOfWeek, int doseHour, int doseMinutes, Drug drug) {
         this.dayOfWeek = dayOfWeek;
-        this.doseTime = doseTime;
+        this.doseHour = doseHour;
+        this.doseMinutes = doseMinutes;
         this.drug = drug;
     }
+
 }

@@ -56,7 +56,6 @@ public class Dashboard extends AppCompatActivity {
             listAdapter.add( drug.name );
         }
 
-
         drugListView.setAdapter( listAdapter );
     }
 
